@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="author" content="Kodinger">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Hoai Nam</title>
+  <title>Edit</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="/css/my.css">
@@ -39,14 +39,14 @@
                 <label for="date">Dien Tich</label>
                 <input id="date" type="number" placeholder="Enter birthday" th:field="*{dienTich}" class="form-control" required
                        autofocus>
-                <!--                                <p style="color: red" th:if="${#fields.hasErrors('date')}" th:errors="*{date}"></p>-->
+                <td th:if="${#fields.hasErrors('dienTich')}" th:errors="*{dienTich}">Area Error</td>
               </div>
 
               <div class="form-group">
                 <label for="phone">Dan So</label>
                 <input id="phone" type="number" placeholder="Enter phone" class="form-control" th:field="*{danSo}" required
                        autofocus>
-                <!--                                <p style="color: red" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></p>-->
+                <td th:if="${#fields.hasErrors('danSo')}" th:errors="*{danSo}">Area Error</td>
 
               </div>
 

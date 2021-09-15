@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="author" content="Kodinger">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Hoai Nam</title>
+  <title>Create</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="/css/my.css">
@@ -45,14 +45,14 @@
                 <label >Dan So</label>
                 <input  type="text" class="form-control" th:field="*{danSo}" required
                        autofocus>
-                <td th:if="${#fields.hasErrors('danSo')}" th:errors="*{danSo}">Area Error</td>
+                <td th:if="${#fields.hasErrors('danSo')}" th:errors="*{danSo}">DS Error</td>
               </div>
 
               <div class="form-group">
                 <label >GDP</label>
                 <input type="text" th:field="*{gpa}" class="form-control" required
                        autofocus>
-                <td th:if="${#fields.hasErrors('gpa')}" th:errors="*{gpa}">Area Error</td>
+                <td th:if="${#fields.hasErrors('gpa')}" th:errors="*{gpa}">GDP Error</td>
               </div>
               <div class="form-group">
                 <label >Gioi Thieu</label>

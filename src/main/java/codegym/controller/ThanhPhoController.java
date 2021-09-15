@@ -39,8 +39,11 @@ public class ThanhPhoController {
         return modelAndView;
     }
     @PostMapping("/create")
-    public ModelAndView create(@Valid @ModelAttribute ThanhPho thanhPho){
-
+    public ModelAndView create(@Valid @ModelAttribute("thanhpho") ThanhPho thanhPho, BindingResult bindingResult){
+        if (bindingResult.hasFieldErrors()) {
+            ModelAndView modelAndView = new ModelAndView("create");
+            return modelAndView;
+        }
         iThanhPhoService.save(thanhPho);
         ModelAndView modelAndView = new ModelAndView("redirect:/home");
         modelAndView.addObject("thanhpho", new ThanhPho());
@@ -54,7 +57,7 @@ public class ThanhPhoController {
         return modelAndView;
     }
     @PostMapping("/edit/{id}")
-    public ModelAndView edit( @ModelAttribute ThanhPho thanhPho, BindingResult bindingResult) {
+    public ModelAndView edit(@Valid @ModelAttribute("thanhpho") ThanhPho thanhPho, BindingResult bindingResult) {
         if (bindingResult.hasFieldErrors()) {
             ModelAndView modelAndView = new ModelAndView("edit");
             return modelAndView;

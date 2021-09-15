@@ -12,12 +12,16 @@ public class ThanhPho {
     private int id;
     @NotEmpty(message = "Ten phai co it nhat 1 ky tu")
     private String name;
+
     @Min(value = 0, message = "DT can not be less than 0")
     private int dienTich;
+
     @Min(value = 0, message = "Population can not be less than 0")
     private int danSo;
+
     @Min(value = 0, message = "DS can not be less than 0")
     private int gpa;
+
     @NotEmpty(message = "gioi thieu phai co it nhat 1 ky tu")
     private String gioiThieu;
 
