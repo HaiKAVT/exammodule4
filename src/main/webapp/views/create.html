@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Kodinger">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hoai Nam</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/css/my.css">
+</head>
+<body class="my-login-page">
+<section class="h-100">
+  <div class="container h-100">
+    <div class="row justify-content-md-center h-100">
+      <div class="card-wrapper">
+        <br>
+        <br>
+        <br>
+        <div class="card fat">
+          <div class="card-body">
+            <h4 class="card-title">Create</h4>
+            <form method="post" th:object="${thanhpho}" class="my-login-validation" novalidate="">
+
+              <div class="form-group">
+                <label for="id">ID</label>
+                <input id="id" th:type="hidden" class="form-control" name="id" th:field="*{id}">
+              </div>
+
+              <div class="form-group">
+                <label >Name</label>
+                <input type="text" th:field="*{name}" class="form-control" required
+                       autofocus>
+                <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+              </div>
+
+              <div class="form-group">
+                <label>Dien Tich</label>
+                <input  type="number" th:field="*{dienTich}" class="form-control" required autofocus>
+                <td th:if="${#fields.hasErrors('dienTich')}" th:errors="*{dienTich}">Area Error</td>
+              </div>
+
+              <div class="form-group">
+                <label >Dan So</label>
+                <input  type="text" class="form-control" th:field="*{danSo}" required
+                       autofocus>
+                <td th:if="${#fields.hasErrors('danSo')}" th:errors="*{danSo}">Area Error</td>
+              </div>
+
+              <div class="form-group">
+                <label >GDP</label>
+                <input type="text" th:field="*{gpa}" class="form-control" required
+                       autofocus>
+                <td th:if="${#fields.hasErrors('gpa')}" th:errors="*{gpa}">Area Error</td>
+              </div>
+              <div class="form-group">
+                <label >Gioi Thieu</label>
+                <input  type="text" th:field="*{gioiThieu}" class="form-control" required
+                       autofocus>
+              </div>
+
+              <div class="form-group">
+                <label for="branch">Quoc Gia</label>
+                <select id="branch" th:field="*{quocGia}" class="form-control">
+                  <option th:each="qg: ${quocGiaList}" th:value="${qg.id}" th:text="${qg.nameQG}"></option>
+                </select>
+              </div>
+
+              <div class="form-group m-0">
+                <button type="submit" class="btn btn-primary btn-block">
+                  Create
+                </button>
+              </div>
+              <br>
+              <div class="form-group m-0">
+                <a href="/home" class="btn btn-primary btn-block">
+                  Cancel
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

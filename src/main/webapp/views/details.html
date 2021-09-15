@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Delete</title>
+</head>
+<body>
+<div class="container">
+  <h1>Thanh Pho Detail</h1>
+  <table>
+    <input th:type="hidden" name="id" th:field="*{id}">
+
+      <tr>
+        <td th:text="'Thanh Pho: '+ ${thanhpho.name}"></td>
+      </tr>
+      <tr>
+        <td th:text="'Dan So: '+ ${thanhpho.danSo}"></td>
+      </tr>
+      <tr>
+        <td th:text="'Dien Tich: '+ ${thanhpho.dienTich}"></td>
+      </tr>
+      <tr>
+        <td th:text="'GPA: ' +${thanhpho.gpa}"></td>
+      <tr/>
+      <tr>
+        <td th:text="'Gioi Thieu: ' +${thanhpho.gioiThieu}"></td>
+      <tr/>
+      <tr>
+        <td th:text="'Quoc Gia: '+ ${thanhpho.quocGia.nameQG}"></td>
+      </tr>
+  </table>
+  <a href="/home">Back to List</a>
+</div>
+</body>
+</html>
